@@ -28,7 +28,7 @@ export default Service.extend({
 
   @discourseComputed("discoveryParams.board", "router.currentRouteName")
   active(board, routeName) {
-    return board !== undefined && routeName.startsWith("discovery.latest");
+    return board !== undefined;
   },
 
   @observes("active")
