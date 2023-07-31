@@ -40,7 +40,7 @@ export default {
         },
       });
 
-      api.modifyClass("controller:tag-show", {
+      api.modifyClass("controller:discovery/latest", {
         pluginId: PLUGIN_ID,
 
         kanbanHelper: service(),
