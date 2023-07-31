@@ -72,6 +72,7 @@ export default {
             return this.transitionTo(
               "tags.showCategoryLatest",
               model.category.id,
+              model.tag.id,
               { queryParams: { board: "default" } }
             );
           } else {
