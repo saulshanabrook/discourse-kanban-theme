@@ -40,6 +40,24 @@ export default {
         },
       });
 
+      api.modifyClass("controller:tag-show", {
+        pluginId: PLUGIN_ID,
+
+        kanbanHelper: service(),
+
+        @on("init")
+        @observes("model")
+        modelChange() {
+          this.kanbanHelper.updateCurrentDiscoveryModel(this.model);
+        },
+
+        // @on("init")
+        // @observes("category")
+        // changeCategory() {
+        //   this.kanbanHelper.updateCurrentCategory(this.category);
+        // },
+      });
+
       api.modifyClass("component:navigation-item", {
         pluginId: PLUGIN_ID,
 
