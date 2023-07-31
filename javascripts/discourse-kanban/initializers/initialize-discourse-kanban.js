@@ -65,6 +65,21 @@ export default {
         );
       };
 
+      api.modifyClass("route:tags.showCategory", {
+        pluginId: PLUGIN_ID,
+        redirect(model, transition) {
+          if (true) {
+            return this.transitionTo(
+              "tags.showCategoryLatest",
+              model.category.id,
+              { queryParams: { board: "default" } }
+            );
+          } else {
+            return this._super(...arguments);
+          }
+        }
+      });
+
       ["category", "categoryNone"].forEach(function (route) {
         api.modifyClass(`route:discovery.${route}`, {
           pluginId: PLUGIN_ID,
